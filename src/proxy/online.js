@@ -6,6 +6,7 @@ export default new class {
     try {
       console.log('proxy.params', params);
       const { broadcastId } = params;
+      params.storageStatus = parseInt(params.storageStatus);
       let result = '';
       if (broadcastId) { // update
         result = await CastBroadcast.update(params, { where: { broadcastId } });

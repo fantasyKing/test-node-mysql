@@ -14,18 +14,21 @@ export default {
     },
     sessionId: {
       type: Sequelize.INTEGER,
-      allowNull: false
+      allowNull: true,
+      default: 0
     },
     storageStatus: {
       type: Sequelize.INTEGER,
-      allowNull: false
+      allowNull: false,
+      default: 0
     },
     url: {
       type: Sequelize.STRING
     },
     onlineView: {
       type: Sequelize.INTEGER,
-      allowNull: false
+      allowNull: true,
+      default: 0
     },
     startTime: {
       type: timestamp,
