@@ -35,7 +35,7 @@
     "no-unused-vars": [2, {
       "vars": "all",
       "args": "after-used",
-      "argsIgnorePattern": "^_",
+      "argsIgnorePattern": "^_|^next$",
       "varsIgnorePattern": "^_"
     }],
     "semi": [
