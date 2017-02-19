@@ -2,6 +2,8 @@
  * Created by zhangyuan on 15/12/7.
  */
 import Sequelize from 'sequelize';
+import timestamp from 'sequelize-mysql-timestamp';
+
 export default {
   modelName: 'CastBroadcast',
   attributes: {
@@ -26,11 +28,11 @@ export default {
       allowNull: false
     },
     startTime: {
-      type: Sequelize.TIME,
+      type: timestamp,
       allowNull: false
     },
     stopTime: {
-      type: Sequelize.TIME,
+      type: timestamp,
       allowNull: false
     },
     broadcastTitle: {

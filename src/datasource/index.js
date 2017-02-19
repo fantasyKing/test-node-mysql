@@ -3,7 +3,7 @@
  */
 export default {
   payDatasource: {
-    db: 'online',
+    db: 'local',
     user: 'root',
     pass: '',
     host: '127.0.0.1',

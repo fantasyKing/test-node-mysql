@@ -1,12 +1,21 @@
 import test from 'ava';
 import rq from 'request-promise';
+import moment from 'moment';
 
 test('test', async t => {
   const options = {
     method: 'POST',
     uri: 'http://localhost:4040/v1/online/save',
     body: {
-      id: 1
+      // broadcastId: 1,
+      sessionId: 10,
+      storageStatus: 1,
+      url: 'test',
+      onlineView: 100,
+      startTime: moment().utc(),
+      stopTime: moment(),
+      broadcastTitle: 'test',
+      price: 100
     },
     json: true
   };

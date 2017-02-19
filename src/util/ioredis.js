@@ -7,7 +7,7 @@ import _ from 'lodash';
 import config from './../config';
 
 const createClient = function createClient(name, conf) {
-  if (typeof conf !== 'object' || !conf.user_redis) {
+  if (typeof conf !== 'object' || !conf.redis) {
     throw new Error('Invalid redis config');
   }
   const client = new Redis(conf.redis);
@@ -110,6 +110,24 @@ class redisClientExtend {
     } catch (err) {
       logger.error({ err, params: key }, 'ioRedisClient.del.error');
       return 0;
+    }
+  }
+
+  async newSet(key, val) {
+    try {
+      return await this.set(key, val);
+    } catch (err) {
+      console.log('redis err', err);
+      return 0;
+    }
+  }
+
+  async newGet(key) {
+    try {
+      return await this.get(key);
+    } catch (err) {
+      console.log('redis err', err);
+      return null;
     }
   }
 }
