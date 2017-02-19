@@ -2,13 +2,13 @@
  * Created by zhangyuan on 15/12/9.
  */
 
-let buildQuery = (projects, conditions, options) => {
-  let query = {};
+const buildQuery = (projects, conditions, options) => {
+  const query = {};
   if (projects) { // map attributes
-    let includes = [];
-    let excludes = [];
-    for (let attr in projects) {
-      if (attr == '__fns__') { // fns include
+    const includes = [];
+    const excludes = [];
+    for (const attr in projects) {
+      if (attr === '__fns__') { // fns include
         includes.concat(projects[attr]);
       } else {
         if (projects[attr]) {
@@ -19,7 +19,7 @@ let buildQuery = (projects, conditions, options) => {
       }
     }
     if (includes.length || excludes.length) {
-      query.attributes = {includes, excludes};
+      query.attributes = { includes, excludes };
     }
   }
 
